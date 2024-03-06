@@ -24,7 +24,15 @@ int main()
 	node* tempNode = NULL;
 	list.reset();
 	while ((tempNode = list.next()) != NULL)
-		cout << tempNode->info;
+		cout<<"\n" << tempNode->info;
+
+	list.reverseList();
+
+	cout << "\n the reversed list is";
+
+	list.reset();
+	while ((tempNode = list.next()) != NULL)
+		cout<<"\n" << tempNode->info;
 
 	return 0;
 

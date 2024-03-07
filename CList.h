@@ -31,6 +31,7 @@ public:
         CurrenPos = head;
     }
     void removeAll();
+    void reverseList();
 
 };
 
@@ -65,4 +66,19 @@ void CList::removeAll()
         head->link = tempNode->link;
         free(tempNode);
     }
+}
+
+void CList::reverseList()
+{
+    node* next;
+    node* current = head->link;
+    node* previous = NULL;
+    while (current != NULL)
+    {
+        next = current->link;
+        current->link = previous;
+        previous = current;
+        current = next;
+    }
+    head->link = previous;
 }
